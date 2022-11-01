@@ -1,0 +1,340 @@
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221101191727)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221101191727"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-01 19:17:57.411917"], ["updated_at", "2022-11-01 19:17:57.411917"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/user/sign_up" for ::1 at 2022-11-01 13:19:22 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/user/sign_up"):
+  
+Started GET "/user/sign_up" for ::1 at 2022-11-01 13:23:02 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_up"):
+  
+Started GET "/user/sign_in" for ::1 at 2022-11-01 13:23:06 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  
+Started POST "/user/sign_up" for ::1 at 2022-11-01 13:23:21 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/user/sign_up"):
+  
+Started POST "/user" for ::1 at 2022-11-01 13:25:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/users" for ::1 at 2022-11-01 13:25:52 -0600
+  
+NoMethodError (undefined method `root' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started POST "/users" for ::1 at 2022-11-01 13:26:07 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 32499)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:44:07 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 553)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:45:26 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 425)
+
+
+Started GET "/users" for ::1 at 2022-11-01 13:45:37 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for ::1 at 2022-11-01 13:45:43 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 431)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:46:49 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"asodih@aoishd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2950)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:47:01 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 432)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:47:21 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 431)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:49:22 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 443)
+
+
+Started PUT "/users" for ::1 at 2022-11-01 13:49:26 -0600
+Processing by Devise::RegistrationsController#update as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 88)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-01 13:49:26 -0600
+Processing by Devise::SessionsController#new as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started LINK "/users" for ::1 at 2022-11-01 13:49:30 -0600
+  
+ActionController::UnknownHttpMethod (LINK, accepted HTTP methods are OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT, PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, UNLOCK, VERSION-CONTROL, REPORT, CHECKOUT, CHECKIN, UNCHECKOUT, MKWORKSPACE, UPDATE, LABEL, MERGE, BASELINE-CONTROL, MKACTIVITY, ORDERPATCH, ACL, SEARCH, MKCALENDAR, and PATCH):
+  
+actionpack (7.0.4) lib/action_dispatch/http/request.rb:434:in `check_method'
+actionpack (7.0.4) lib/action_dispatch/http/request.rb:146:in `request_method'
+rack (2.2.4) lib/rack/request.rb:199:in `post?'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:26:in `actionable_request?'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started PUT "/users" for ::1 at 2022-11-01 13:49:41 -0600
+Processing by Devise::RegistrationsController#update as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 84)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-01 13:49:41 -0600
+Processing by Devise::SessionsController#new as */*
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started PUT "/users" for ::1 at 2022-11-01 13:49:58 -0600
+Processing by Devise::RegistrationsController#update as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 84)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-01 13:49:58 -0600
+Processing by Devise::SessionsController#new as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 228)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:50:03 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 431)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:50:23 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 32994)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for ::1 at 2022-11-01 13:50:54 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 43ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 32994)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:53:13 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 446)
+
+
+Started POST "/users" for ::1 at 2022-11-01 13:53:50 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 444)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:22:12 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 42ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 32994)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:22:58 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 446)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:23:00 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 444)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:23:02 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 444)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:23:30 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 2956)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:26:16 -0600
+  
+ActionController::RoutingError (uninitialized constant Users::RegisrationsController
+Did you mean?  Users::RegistrationsController):
+  
+Started POST "/users" for ::1 at 2022-11-01 14:26:44 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.2ms | Allocations: 268)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:27:46 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 308ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 4421)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:29:33 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 333ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 33047)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:35:20 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 200 OK in 8ms (Views: 1.1ms | Allocations: 270)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:35:35 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"password"=>"[FILTERED]", "registration"=>{"password"=>"[FILTERED]"}}
+Completed 422 Unprocessable Entity in 321ms (ActiveRecord: 1.6ms | Allocations: 7601)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email can't be blank, Email can't be blank):
+  
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2022-11-01 14:36:05 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aosidhaos@oishfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aosidhaos@oishfd.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-01 20:36:05.828140"], ["updated_at", "2022-11-01 20:36:05.828140"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Completed 200 OK in 384ms (Views: 0.5ms | ActiveRecord: 7.9ms | Allocations: 4518)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:37:06 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/users"):
+  
+Started POST "/users" for ::1 at 2022-11-01 14:37:29 -0600
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3880)
+
+
+Started POST "/users" for ::1 at 2022-11-01 14:38:05 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aosidhaos@oishfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Completed 422 Unprocessable Entity in 284ms (ActiveRecord: 1.5ms | Allocations: 5213)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2022-11-01 14:43:00 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aosidhaos@oishfd.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aosidhaos@oishfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Completed 422 Unprocessable Entity in 378ms (ActiveRecord: 1.3ms | Allocations: 38019)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2022-11-01 14:43:07 -0600
+Processing by Users::RegistrationsController#create as */*
+  Parameters: {"email"=>"aosidhaos@oiasdhfd.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aosidhaos@oiasdhfd.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aosidhaos@oiasdhfd.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aosidhaos@oiasdhfd.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-11-01 20:43:07.455170"], ["updated_at", "2022-11-01 20:43:07.455170"]]
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users/registrations_controller.rb:14:in `create'
+Completed 200 OK in 344ms (Views: 0.3ms | ActiveRecord: 4.1ms | Allocations: 2819)
+
+
